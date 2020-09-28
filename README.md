@@ -16,13 +16,13 @@
 
 Nodes can be used without explicit declaration.
 
-`1`, `P`: basic node
-`(1)`, `(E)`: acceptor node
-`->` before a node: input "connector" (only one allowed per DFA)
-`-a>`, `-a,b>`: connectors, resp. for labels _{a}_, and _{a,b}_
-`1^a`: looping connector (connector for symbol _a_, from _1_ to _1_) (shortcut)
+ * `1`, `P`: basic node
+ * `(1)`, `(E)`: acceptor node
+ * `->` before a node: input "connector" (only one allowed per DFA)
+ * `-a>`, `-a,b>`: connectors, resp. for labels _{a}_, and _{a,b}_
+ * `1^a`: looping connector (connector for symbol _a_, from _1_ to _1_) (shortcut)
 
-<kbd>Enter</kbd>: new line = new expression with fresh context
+ * <kbd>Enter</kbd>: new line = new expression with fresh context
 
 ## Usage
 
@@ -33,4 +33,5 @@ i.e: `cargo run < automata.txt`
 ## License
 
 By Edgar Onghena <dev@edgar.bzh>
+
 GPLv3
