@@ -1,0 +1,5 @@
+[package]
+name = "eoautomata-core"
+version = "0.1.0"
+authors = ["Edgar Onghena <dev@edgar.bzh>"]
+edition = "2018"
