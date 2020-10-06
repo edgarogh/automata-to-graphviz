@@ -8,4 +8,6 @@ edition = "2018"
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
+console_error_panic_hook = "*"
+eoautomata-core = { path = "../core" }
 wasm-bindgen = "0.2"

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aude version Rust</title>
+</head>
+<body>
+    <textarea id="input" id="" cols="60" rows="40"></textarea>
+    <textarea id="output" id="" cols="60" rows="40" readonly></textarea>
+    <button disabled>Convertire le cod</button>
+    <svg></svg>
+    <script type="module">
+        import Viz from "/vendor/viz.js@2.1.2/viz.es.js";
+        import * as lib from "/pkg/eoautomata_web.js";
+        lib.default();
+
+        globalThis.lib = lib;
+
+        const viz = new Viz({ workerURL: '/vendor/viz.js@2.1.2/full.render.js' });
+
+        input.value = "-> (A)^a,b";
+        document.querySelector('button').disabled = false;
+
+        document.querySelector('button').addEventListener('click', () => {
+            const gvz = output.value = lib.parse_eoa(input.value).gvz();
+
+            viz.renderSVGElement(gvz)
+                .then(function(element) {
+                    document.querySelector('svg').replaceWith(element);
+                });
+        });
+    </script>
+</body>
+</html>
